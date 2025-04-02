@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: black; color: aliceblue;">
+    <h1>Engine</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+
+    <script>
+        //setInterval() , clearInterval()   :-
+
+        // setInterval(()=>{
+        //     console.log('V8 Processing...',Date.now())
+        // },1000)
+
+
+        //
+        // const say = (e)=>{
+        //     console.log(`${e} Processing...,${Date.now()}`)
+        // }
+        // const stopInterval = setInterval(say,1000,'V8')//we can pass parameters
+        // clearInterval(stopInterval)
+
+
+        //
+        let clear;
+        document.getElementById("start").addEventListener('click', () => {
+            clear = setInterval(() => {
+                console.log("Processing start...", Date.now())
+            }, 1000)
+        })
+        document.getElementById("stop").addEventListener('click', () => {
+            clearInterval(clear)
+            console.log('Process ended...!')
+        })
+    </script>
+</body>
+
+</html>

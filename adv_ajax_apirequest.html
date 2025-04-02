@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: monospace;
+            color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid aliceblue;
+            padding: 10px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ReadyState</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0 (UNSENT)</td>
+                <td>Request abhi banayi gayi hai, lekin <code>open()</code> method call nahi hua.</td>
+            </tr>
+            <tr>
+                <td>1 (OPENED)</td>
+                <td><code>open()</code> method call ho chuka hai.</td>
+            </tr>
+            <tr>
+                <td>2 (HEADERS_RECEIVED)</td>
+                <td>Server se response headers mil gaye hain.</td>
+            </tr>
+            <tr>
+                <td>3 (LOADING)</td>
+                <td>Response ka body part-by-part receive ho raha hai.</td>
+            </tr>
+            <tr>
+                <td>4 (DONE)</td>
+                <td>Request pura ho gaya hai, aur response available hai.</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+    <!-- JS -->
+    <script>
+        // API's request using XMLHttpRequest(AJAX request)
+
+
+        const http = new XMLHttpRequest()
+        const url = 'https://api.github.com/users/ANKITKUMARBARIK'
+        const method = 'GET'
+
+        http.open(method, url)
+
+        http.onreadystatechange = function () {
+            console.log(http.readyState)
+            if (http.readyState === XMLHttpRequest.DONE && http.status === 200) {
+                const data = JSON.parse(http.responseText)
+                console.log(typeof data)
+                console.log('Followers : ', data.followers)
+            } else if (http.readyState === XMLHttpRequest.DONE && http.status !== 200) {
+                console.log('Error !');
+            } else {
+                console.log('Something went wrong !')
+            }
+        }
+        http.send()
+
+
+        // EXPLAIN 👆🏻 CODE :-->
+
+        // const http = new XMLHttpRequest() :
+        // A new XMLHttpRequest object is created and assigned to the variable http.
+        // This object is used to send requests to the server and handle the responses.
+
+        // const url = 'https://api.github.com/users/ANKITKUMARBARIK' :
+        // This is the API URL to which the request will be sent.
+        // The URL contains details about a GitHub user with the username ANKITKUMARBARIK.
+
+        // const method = 'GET' :
+        // The HTTP method is set to GET.
+        // The GET method is used to retrieve data from the server.
+
+        // http.open(method, url) :
+        // The open() method initializes the request.
+        // It sets the HTTP method (GET) and the target URL.
+        // At this point, the request is prepared but not yet sent to the server.
+
+        // http.onreadystatechange :
+        // This is an event handler that triggers whenever the readyState of the request changes.
+        // It is used to check whether the request has been completed or not.
+        // ReadyState Conditions:
+
+        // http.readyState === XMLHttpRequest.DONE :
+        // This confirms that the request has been fully processed (ReadyState 4).
+
+        // http.status === 200 :
+        // This ensures that the request was successfully completed and the server returned a 200 OK response.
+
+        // http.send() :
+        // This sends the request to the server.
+        // After this, the logic inside onreadystatechange is executed.
+
+        // Parsing the Response :
+        // The response from the server (responseText) is received as a JSON string.
+        // The JSON.parse() method converts this JSON string into a JavaScript object for further processing.
+
+
+    </script>
+</body>
+
+</html>

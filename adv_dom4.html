@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent">
+        <p id="child1"></p>
+        <p id="child2"></p>
+        <p id="child3"></p>
+    </div>
+
+    <script>
+        const parent = document.getElementById('parent')
+
+        const p1 = parent.firstChild
+        console.log(p1)
+        
+        const p2 = parent.lastChild
+        console.log(p2)
+
+        const child1 = document.getElementById('child1')
+        const child2 = document.getElementById('child2')
+
+        const c1 = child1.nextSibling
+        console.log(c1)
+
+        const c2 = child2.previousSibling
+        console.log(c2)
+    </script>
+</body>
+</html>

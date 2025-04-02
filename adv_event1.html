@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: black; color: white;">
+    <div>
+        <ul id="images">
+            <li><img src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="" width="200px" id="peoples"></li>
+            <li><img src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="" width="200px" id="owl"></li>
+            <li><img src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="" width="200px" id="pray"></li>
+            <li><img src="https://images.pexels.com/photos/2522676/pexels-photo-2522676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="" width="200px" id="tower"></li>
+            <li><img src="https://images.pexels.com/photos/2522669/pexels-photo-2522669.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="" width="200px" id="drink"></li>
+            <li><a href="https://google.com" style="color: aliceblue;" target="_blank" id="google">GOOGLE</a></li>
+        </ul>
+    </div>
+    <script>
+        // document.getElementById("owl").onclick = ()=>{
+        //     alert("owl")
+        // }
+
+        // attachEvent()
+        // on
+
+        // document.getElementById("owl").addEventListener("click",()=>{
+        //     alert("owl")
+        // },false)
+
+        //type, timestamp, defaultPrevented
+        //target, toElement, srcElement, currentTarget,
+        //clientX, clientY, screenX, screenY
+        //altkey, ctrlkey, shiftkey, keyCode
+
+        //Capturing event
+        // document.getElementById("images").addEventListener("click",(e)=>{
+        //     console.log("clicked inside the ul")
+        // },true)
+
+        // document.getElementById("owl").addEventListener("click",(e)=>{
+        //     console.log("owl clicked")
+        // },true)
+
+
+        //Bubbling event
+        // document.getElementById("images").addEventListener("click", (e) => {
+        //     console.log("clicked inside the ul")
+        // }, false)
+
+        // document.getElementById("owl").addEventListener("click", (e) => {
+        //     console.log("owl clicked")
+        //     // e.stopPropagation()
+        // }, false)
+
+
+        //
+        // document.getElementById("google").addEventListener("click", (e) => {
+        //     console.log("google clicked")
+        //     e.stopPropagation()
+        //     e.preventDefault()
+        // }, false)
+
+
+        //
+        // document.querySelector("#images").addEventListener("click",(e)=>{
+        //     console.log(e)
+        //     console.log(e.target)
+        //     console.log(e.target.parentNode)
+        //     console.log(e.target.parentNode.remove())
+        // },false)
+
+
+        //
+        document.querySelector("#images").addEventListener("click",(e)=>{
+            console.log(e.target.tagName)
+            if(e.target.tagName === 'IMG'){
+                console.log(e.target.parentNode.remove())
+            }
+        },false)
+
+    </script>
+</body>
+
+</html>

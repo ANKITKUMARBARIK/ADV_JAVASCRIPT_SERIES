@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: black; color: aliceblue;">
+    <h1>JavaScript V8</h1>
+    <button id="stop">STOP</button>
+
+
+    <script>
+        //setTimeout() , clearTimeout()   :-
+
+        // setTimeout(() => {
+        //     console.log('Hero')
+        // }, 2000)
+
+        //
+        // const say = ()=>{
+        //     console.log('Hero')
+        // }
+        // setTimeout(say,2000)
+
+        //
+        const changeText = ()=>{
+            document.querySelector("h1").innerHTML = 'JS Series'
+        }
+        let stopTime = setTimeout(changeText,2000)
+
+        document.getElementById("stop").addEventListener('click',()=>{
+            clearTimeout(stopTime)
+            console.log('STOPPED')
+        })
+    </script>
+</body>
+
+</html>

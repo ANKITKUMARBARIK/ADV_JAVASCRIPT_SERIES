@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: black;">
+    <script>
+        const xhr = new XMLHttpRequest()
+        const url = 'https://api.github.com/users/ANKITKUMARBARIK'
+        const method = 'GET'
+
+        xhr.open(method, url)
+        xhr.onreadystatechange = function () {
+            console.log(xhr.readyState)
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                const data = JSON.parse(xhr.responseText)
+                console.log(typeof data)
+                console.log(data)
+                console.log(data.followers)
+            } else if (xhr.readyState === XMLHttpRequest.DONE && xhr.status !== 200) {
+                console.log('ERROR')
+            } else {
+                console.log('Something went wrong !')
+            }
+        }
+        xhr.send()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body style="background-color: black; color: white;">
+    <h1>DOM SELECTORS</h1>
+    <p id="myPara">This is dumy tag with many manipulation</p>
+    <ul>
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+        <li class="item">Item 4</li>
+    </ul>
+
+    <!-- JS -->
+    <script>
+        // console.log(document.getElementById('myPara'))
+
+
+        // // NODELIST USE FOR EACH LOOP
+        // const para = document.getElementById('myPara')
+        // para.addEventListener('click',()=>{
+        //     para.classList.toggle('highlight')
+        // })
+
+
+        // // HTML COLLECTION = CONVERT INTO ARRAY AND DO FOR EACH LOOP
+        // const list = document.getElementsByClassName('item')
+        // const way = Array.from(list)
+        // way.forEach((e)=>{
+        //     e.style.color ='magenta'
+        // })
+
+
+        // 
+        // const spanItem = document.querySelector('#myPara')
+        // spanItem.style.color = 'magenta'
+
+
+        // // update first item only
+        // const firstList = document.querySelector('.item')
+        // firstList.style.color = 'magenta'
+
+
+        // 
+        // const allItem = document.querySelectorAll('.item')
+        // console.log(allItem)
+        // allItem.forEach((e)=>{
+        //     e.style.color='blue'
+        // })
+
+
+        // // HTML COLLECTION = CONVERT INTO ARRAY AND DO FOR EACH LOOP
+        // const target = document.getElementsByTagName('li')
+        // const vay = Array.from(target)
+        // vay.forEach((e)=>{
+        //     e.style.color ='magenta'
+        // })
+        // // another way
+        // for(let i=0;i<vay.length;i++){
+        //     vay[i].style.color = 'red'
+        // }
+    </script>
+</body>
+</html>

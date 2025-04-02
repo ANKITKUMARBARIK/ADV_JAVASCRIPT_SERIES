@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1>DOM METHODS</h1>
+
+    <!-- <div>
+        <span>Hello</span>
+        <span style="display: none;">JS</span>
+    </div> -->
+
+    <div>
+        <span id="one">Hello</span>
+        <span id="two">Morning</span>
+    </div>
+
+    <script>
+        // console.log(document.dir)
+        // console.log(document.all)
+        // console.log(document.URL);
+        // console.log(document.domain);
+        // console.log(document.body);
+        // console.log(document.head);
+        // console.log(document.title = 'DADA');
+
+        // const body = document.body
+
+        // body.append('hello ', 'bye')
+        // body.appendChild('hello ', 'bye')
+        
+
+
+        // //create element
+        // const body = document.body
+        // const div = document.createElement('div')
+        // //add text
+        // div.innerText = 'HEllo Coders'
+        // // div.textContent = 'HEllo Coders'
+        // //add in html
+        // body.append(div)
+        // console.log(div)
+
+        // //Diff.. innerText and textContent
+        // const div = document.querySelector('div')
+        // console.log(div.innerText) //only show visible text
+        // console.log(div.textContent) //show all text or hidden text
+
+
+
+        // //add element
+        // const body = document.body
+        // const div = document.createElement('div')
+        // const strong = document.createElement('strong')
+        // strong.innerText = 'Lets create something'
+        // div.append(strong)
+        // body.append(div)
+
+        // //another way
+        // const body = document.body
+        // // div.innerText = '<div><strong>this is short version</strong></div>'
+        // body.innerHTML = '<div><strong>this is short version</strong></div>'
+        
+
+        // //remove element
+        // const div = document.querySelector('div')
+        // const span1 = document.getElementById('one')
+        // const span2 = document.getElementById('two')
+        // // span1.remove()
+        // // div.removeChild(span1)  
+
+
+        //attributes properties and methods
+        const div = document.querySelector('div')
+        const span1 = document.getElementById('one')
+        const span2 = document.getElementById('two')
+        console.log(span1.getAttribute('id'))
+        console.log(span2.setAttribute('id','abcde'))
+        span1.removeAttribute('id')
+
+
+        //add id attribute
+        span1.id = 'hellouser'
+        // span1.className = 'hellouser'
+
+        //add class attribute
+        span2.classList.add('newClass')
+        span2.classList.remove('newClass')
+
+        // span2.className = 'newoneClass'
+        span2.className = 'newoneClass a b c d'
+    </script>
+</body>
+</html>

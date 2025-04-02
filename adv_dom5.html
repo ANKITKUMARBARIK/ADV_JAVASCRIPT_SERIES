@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: black;">
+
+
+    <script>
+        const div = document.createElement('div')  //create element
+
+        // div.className = "myclass"   //create class attribute
+        // div.id = "myid"             //create id attribute
+
+        div.setAttribute("class","myClass")  //create custom attribute
+        div.setAttribute("id","myId")  //create custom attribute
+
+        // div.style.backgroundColor = "magenta"  //create styling
+        // div.style.padding = "15px"
+
+        //ANOTHER WAY to styling - > multiple styling form of css way...
+        div.style.cssText = "background-color: magenta; padding: 15px;"
+
+        // div.innerHTML = "Hlo JS User"   //Overwrite the current text
+        const addText1 = document.createTextNode("Hlo JS User ")   //add text
+        const addText2 = document.createTextNode("Good Morning")   //add text
+
+        div.appendChild(addText1)  //append(add) in (div)
+        div.appendChild(addText2)
+
+        const body = document.body  //append(add) in (html body)
+        body.appendChild(div)
+    </script>
+</body>
+
+</html>
